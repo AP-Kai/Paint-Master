@@ -6,9 +6,11 @@
 
 ## 1.1 效果展示
 
-视频链接：
+Bilibili链接：https://www.bilibili.com/video/BV1TL41187Lb/
 
-GitHub链接：
+GitHub链接：[https://github.com/AP-Kai/Paint-Master](https://github.com/AP-Kai/Paint-Master)
+
+AI Studio链接：https://aistudio.baidu.com/aistudio/projectdetail/2315557
 
 ## 1.2 项目介绍
 
@@ -60,7 +62,7 @@ if msg.type() == Message.Type.MESSAGE_TYPE_IMAGE:
 
 团队： 吃饱就睡队
 
-成员： [AP-Kai](https://aistudio.baidu.com/aistudio/personalcenter/thirdview/675310)、[nian53321](https://aistudio.baidu.com/aistudio/personalcenter/thirdview/724244)
+成员： [AP-Kai](https://aistudio.baidu.com/aistudio/personalcenter/thirdview/675310)、[GT-ZhangAcer](https://aistudio.baidu.com/aistudio/personalcenter/thirdview/29724)、[nian53321](https://aistudio.baidu.com/aistudio/personalcenter/thirdview/724244)
 
 致谢：[PaintTransformer](https://github.com/wzmsltw/PaintTransformer)
 
@@ -69,4 +71,13 @@ if msg.type() == Message.Type.MESSAGE_TYPE_IMAGE:
 ​			感谢飞桨！~~~
 
 
+## 个人简介
+
+> 作者： AP-Kai 
+
+> 学校： 沈阳工业大学 大一在读
+
+> AI Studio: [https://aistudio.baidu.com/aistudio/personalcenter/thirdview/675310](https://aistudio.baidu.com/aistudio/personalcenter/thirdview/675310)
+
+> GitHub: [https://github.com/AP-Kai/AP-Kai](https://github.com/AP-Kai/AP-Kai)
 
