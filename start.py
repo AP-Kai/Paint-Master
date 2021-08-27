@@ -13,7 +13,7 @@ from wechaty import (
 )
 
 os.environ['WECHATY_PUPPET'] = "wechaty-puppet-service"
-os.environ['WECHATY_PUPPET_SERVICE_TOKEN'] = "puppet_padlocal_a48ae36edb074414a1db144d401ee05"  # 这里填Wechaty token
+os.environ['WECHATY_PUPPET_SERVICE_TOKEN'] = "puppet_padlocal_"  # 这里填Wechaty token
 os.environ['CUDA_VISIBLE_DEVICES'] = "0"
 
 
