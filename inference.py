@@ -28,7 +28,6 @@ def main(input_path, model_path, output_dir, need_animation=False, resize_h=None
     stroke_num = 8
 
     #* ----- load model ----- *#
-    paddle.set_device('gpu')
     net_g = network.Painter(5, stroke_num, 256, 8, 3, 3)
     net_g.set_state_dict(paddle.load(model_path))
     net_g.eval()
