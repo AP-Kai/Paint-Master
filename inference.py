@@ -86,7 +86,6 @@ def main(input_path,
                     continue
                 if step % 2 == 1:
                     print("正在处理", step // 2 + 1, "帧")
-                    frame = cv2.flip(frame, 0)
                     frame_path = os.path.join(tmp_path, "cache.jpg")
                     cv2.imwrite(frame_path, frame)
                     original_img = render_utils.read_img(frame_path, 'RGB', resize_h, resize_w)
