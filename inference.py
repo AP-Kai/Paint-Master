@@ -24,7 +24,7 @@ def main(input_path,
     if not os.path.exists(output_dir):
         os.mkdir(output_dir)
     input_name = os.path.basename(input_path)
-    output_path = os.path.join(output_dir, "out-" + input_name)
+    output_path = os.path.join(output_dir, "out_" + os.path.splitext(input_name)[0])
     frame_dir = None
     if need_animation:
         if not serial:
@@ -55,9 +55,11 @@ def main(input_path,
         if need_animation:
             print("total frame:", len(final_result_list))
             fourcc = cv2.VideoWriter_fourcc(*'XVID')
-            out = cv2.VideoWriter(output_path, fourcc, 20.0, (resize_h, resize_w))
+            out = cv2.VideoWriter(output_path + ".mp4", fourcc, 20.0, (resize_h, resize_w))
             for idx, frame in enumerate(final_result_list):
                 out.write(frame)
+            else:
+                return final_result_list[-1]
         else:
             cv2.imwrite(output_path, final_result_list[-1])
     elif video:
@@ -67,15 +69,17 @@ def main(input_path,
         cap = cv2.VideoCapture(input_path)
         # Define the codec and create VideoWriter object
         fourcc = cv2.VideoWriter_fourcc(*'XVID')
-        out = cv2.VideoWriter(output_path, fourcc, 20.0, (resize_h, resize_w))
+        out = cv2.VideoWriter(output_path + ".mp4", fourcc, 20.0, (resize_h, resize_w))
 
         step = 0
+        first_frame = None
         while cap.isOpened():
             ret, frame = cap.read()
             step += 1
             if ret is True:
                 if step == 1:
                     print("正在处理首帧")
+                    first_frame = frame
                     frame_path = os.path.join(tmp_path, "cache.jpg")
                     cv2.imwrite(frame_path, frame)
                     original_img = render_utils.read_img(frame_path, 'RGB', resize_h, resize_w)
@@ -94,13 +98,16 @@ def main(input_path,
                         out.write(final_result)
             else:
                 break
+
         cap.release()
         out.release()
+        return first_frame
 
     else:
         original_img = render_utils.read_img(input_path, 'RGB', resize_h, resize_w)
         final_result = render_parallel.render_parallel(original_img, net_g, meta_brushes)
-        cv2.imwrite(output_path, final_result)
+        cv2.imwrite(output_path + ".jpg", final_result)
+        return final_result
 
     print("total infer time:", time.time() - t0)
 
