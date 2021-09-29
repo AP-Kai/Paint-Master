@@ -12,6 +12,8 @@ GitHub链接：[https://github.com/AP-Kai/Paint-Master](https://github.com/AP-Ka
 
 AI Studio链接：https://aistudio.baidu.com/aistudio/projectdetail/2315557
 
+启动GUI：`python run.py`
+
 ## 1.2 项目介绍
 
 本项目基于PaddlePaddle和Wechaty开发，主要功能为：图像油画化。您仅需向Robot发送一张图片，稍作等待便可以得到一张笔底春风、笔精墨妙、笔墨横姿、不拘绳墨、丹青不渝、丹青妙手、画中有诗、挥翰成风、挥毫落纸、挥洒自如、活色生香、山节藻棁、山耶云耶、涉笔成趣、铁画银钩、下笔风雷、一挥而就的一张惟妙惟肖的油画。并且，您可以直观的感受到AI一步步生成油画的过程，很休闲，很解压！
