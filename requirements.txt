@@ -1,0 +1,4 @@
+paddlepaddle
+qgui
+qpt
+opencv-python
