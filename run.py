@@ -9,7 +9,7 @@ import PIL.Image as Image
 import cv2
 
 from qgui import CreateQGUI
-from qgui.bar_tools import GitHub
+from qgui.banner_tools import GitHub
 from qgui.notebook_tools import ChooseFileTextButton, ChooseDirTextButton, RunButton, \
     RadioObviousToolButton, BaseButton, HorizontalToolsCombine
 from qgui import MessageBox, show_file_or_path
