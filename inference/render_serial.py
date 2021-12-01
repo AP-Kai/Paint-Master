@@ -4,12 +4,9 @@ codes for oilpainting style transfer.
 """
 import paddle
 import paddle.nn as nn
-import paddle.nn.functional as F
 import numpy as np
-from PIL import Image
 import math
-import cv2
-import render_utils
+from . import render_utils
 import time
 
 

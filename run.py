@@ -14,7 +14,7 @@ from qgui.notebook_tools import ChooseFileTextButton, ChooseDirTextButton, RunBu
     RadioObviousToolButton, BaseButton, HorizontalToolsCombine
 from qgui import MessageBox, show_file_or_path
 
-from inference import main as infer_main
+from inference.inference import main as infer_main
 
 
 def infer(args):
@@ -35,14 +35,14 @@ def infer(args):
     print("开始制作，请耐心等待...")
     if mode == "仅图像":
         file_ext = ".jpg"
-        im = infer_main(img_path, "paint_best.pdparams", out_path, resize_h=512, resize_w=512)
+        im = infer_main(img_path, "inference/paint_best.pdparams", out_path, resize_h=512, resize_w=512)
     elif mode == "图像->视频":
         file_ext = ".mp4"
-        im = infer_main(img_path, "paint_best.pdparams", out_path, resize_h=512, resize_w=512, serial=True,
+        im = infer_main(img_path, "inference/paint_best.pdparams", out_path, resize_h=512, resize_w=512, serial=True,
                         need_animation=True)
     else:
         file_ext = ".mp4"
-        im = infer_main(img_path, "paint_best.pdparams", out_path, resize_h=512, resize_w=512, video=True)
+        im = infer_main(img_path, "inference/paint_best.pdparams", out_path, resize_h=512, resize_w=512, video=True)
 
     im = Image.fromarray(cv2.cvtColor(im, cv2.COLOR_BGR2RGB))
 

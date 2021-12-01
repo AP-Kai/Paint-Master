@@ -1,4 +1,4 @@
-import render_utils
+from . import render_utils
 import paddle
 import paddle.nn as nn
 import paddle.nn.functional as F

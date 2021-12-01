@@ -1,15 +1,7 @@
-import numpy as np
-from PIL import Image
-import network
 import os
-import math
-import render_utils
 import paddle
-import paddle.nn as nn
-import paddle.nn.functional as F
 import cv2
-import render_parallel
-import render_serial
+from . import render_parallel, render_serial, render_utils, network
 
 
 def main(input_path,
@@ -43,8 +35,8 @@ def main(input_path,
         param.stop_gradient = True
 
     # * ----- load brush ----- *#
-    brush_large_vertical = render_utils.read_img('brush/brush_large_vertical.png', 'L')
-    brush_large_horizontal = render_utils.read_img('brush/brush_large_horizontal.png', 'L')
+    brush_large_vertical = render_utils.read_img('inference/brush/brush_large_vertical.png', 'L')
+    brush_large_horizontal = render_utils.read_img('inference/brush/brush_large_horizontal.png', 'L')
     meta_brushes = paddle.concat([brush_large_vertical, brush_large_horizontal], axis=0)
 
     import time
@@ -113,7 +105,7 @@ def main(input_path,
 
 
 if __name__ == '__main__':
-    main(input_path='image/925915968153427249.jpg',
+    main(input_path='image/123.jpg',
          model_path='paint_best.pdparams',
          output_dir='./image/out/',
          need_animation=True,  # whether need intermediate results for animation.
