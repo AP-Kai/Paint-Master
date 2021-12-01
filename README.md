@@ -7,21 +7,23 @@
 　　V1.0版本将Paint-Master与Wechaty联合，支持发送微信消息进行油画的预测。
 
 　　在V1.1版本，更新了GUI预测方式，提供**图片->图片**，**图片->视频**,**视频->视频**三种预测方式。
-
-## 1.2 界面介绍
-
- Paint-Master使用QGUI快速开发GUI界面。[QGUI](https://github.com/QPT-Family/QGUI) - 低于100k的超轻量桌面图形化框架，可通过几行代码、使用模板来快捷制作出属于你的图形化界面。
- 
- ![](https://ai-studio-static-online.cdn.bcebos.com/44bc61e4168444e0b5120a4e5b495536b588f18d370a43b58467ec24197abd80)
- 
- ## 1.3 快速开始
- 	# 下载Paint-Master代码
- 	git clone https://github.com/AP-Kai/Paint-Master.git
+  
+## 1.2 快速开始
+	# 下载Paint-Master代码
+	git clone https://github.com/AP-Kai/Paint-Master.git
 	cd Paint-Master
 	# 安装依赖文件
 	python -m pip install -r requirements.txt
 	# 启动GUI
  	python run.py
+
+## 1.3 界面介绍
+
+ Paint-Master使用QGUI快速开发GUI界面。[QGUI](https://github.com/QPT-Family/QGUI) - 低于100k的超轻量桌面图形化框架，可通过几行代码、使用模板来快捷制作出属于你的图形化界面。
+ 
+ ![](https://ai-studio-static-online.cdn.bcebos.com/44bc61e4168444e0b5120a4e5b495536b588f18d370a43b58467ec24197abd80)
+ 
+
 	
 ## 1.4 油画展示
 
