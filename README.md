@@ -22,6 +22,17 @@
 	python -m pip install -r requirements.txt
 	# 启动GUI
  	python run.py
+	
+## 1.4 油画展示
+
+![展示](https://user-images.githubusercontent.com/77101860/144221140-371de208-8583-491b-a0ff-74783a905a27.png)
+
+
+## 1.5 致谢
+
+[PaintTransformer](https://github.com/wzmsltw/PaintTransformer)
+
+[QGUI](https://github.com/QPT-Family/QGUI)
     
 ## 个人简介
 
