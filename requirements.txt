@@ -2,3 +2,7 @@ paddlepaddle
 qgui
 qpt
 opencv-python
+ttkbootstrap
+requests
+qrcode
+pillow
