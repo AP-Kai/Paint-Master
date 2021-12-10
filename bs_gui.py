@@ -67,7 +67,7 @@ class RightWin:
         self.top_f.pack(side="top")
 
         self.frame.pack(side="top")
-        self.set_next_qr()
+        # self.set_next_qr()
 
     def sync_run(self):
         try:
@@ -121,9 +121,9 @@ class RightWin:
 
             print(f"http://180.76.179.211:8004/file/upload/{self.now_uuid}_dn.jpg")
             qr = make_qr(f"http://180.76.179.211:8004/file/upload/{self.now_uuid}_dn.jpg")
-            qr = qr.resize((300, 300))
-            im.paste(qr, (10, 1500, 310, 1800))
-
+            qr = qr.resize((100, 100))
+            # im.paste(qr, (10, 1500, 310, 1800))
+            im.paste(qr, (10, 10, 110, 110))
             # 设置图片
             print(f"7| {datetime.datetime.now()} |设置图片")
             self.left.p = ImageTk.PhotoImage(im)
