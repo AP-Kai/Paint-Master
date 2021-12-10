@@ -22,6 +22,8 @@ SCALE = 1
 font = ImageFont.truetype('LXGWWenKai-Bold.ttf', 35)
 font2 = ImageFont.truetype('LXGWWenKai-Bold.ttf', 20)
 
+ad_im = Image.open("./cache_dir/338.jpg")
+
 
 def make_qr(url):
     qr = qrcode.QRCode()
@@ -117,13 +119,16 @@ class RightWin:
             print(f"6| {datetime.datetime.now()} |上传图片")
             requests.post(url="http://180.76.179.211:8004/api/upload_image",
                           params={"timestamp": self.now_uuid + "_dn"},
-                          data=json.dumps({"image": base64_str}))
+                          data=json.dumps({"image": base64_str}),
+                          headers={"Content-Type": "application/json"})
 
             print(f"http://180.76.179.211:8004/file/upload/{self.now_uuid}_dn.jpg")
             qr = make_qr(f"http://180.76.179.211:8004/file/upload/{self.now_uuid}_dn.jpg")
             qr = qr.resize((100, 100))
-            # im.paste(qr, (10, 1500, 310, 1800))
-            im.paste(qr, (10, 10, 110, 110))
+            new_ad = ad_im.copy()
+            new_ad.paste(qr, (0, 0, 100, 100))
+
+            im.paste(new_ad, (10, 10, 448, 110))
             # 设置图片
             print(f"7| {datetime.datetime.now()} |设置图片")
             self.left.p = ImageTk.PhotoImage(im)
